@@ -28,29 +28,21 @@ gulp.task('swig', () => {
 });
 
 // Babel compiler
-gulp.task('babel', () => {
+gulp.task('js', () => {
   gulp.src(['scripts/lib/*.js', 'scripts/index.js'])
       .pipe(babel({ presets: ['es2015'] }))
       .pipe(gulp.dest('scripts/dist'));
 });
 
-// JSHint linter
-gulp.task('lint', () => {
-  gulp.src(['scripts/**', '!scripts/soundcove.js'])
-      .pipe(jshint())
-      .pipe(jshint.reporter(stylish));
-});
-
 // Compilation.
-gulp.task('default', [ 'stylus', 'swig', 'babel' ]);
+gulp.task('default', [ 'stylus', 'swig', 'js' ]);
 
 
 // Testing
 gulp.task('test', function(){
-  gulp.start('stylus', 'swig', 'babel');
   gulp.watch('views/**', [ 'swig' ]);
   gulp.watch(['styles/components/**', 'styles/index.styl', '!styles/index.css'], [ 'stylus' ]);
-  gulp.watch(['scripts/components/**', '!scripts/index.js'], [ 'babel' ]);
+  gulp.watch(['scripts/components/**', '!scripts/index.js'], [ 'js' ]);
 
   simulateApp('-c', 'test_config.json');
 });
