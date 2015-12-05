@@ -3,6 +3,6 @@ bower_components
 *.log
 
 # Generated
-home.html
+/index.html
 styles/index.css
 scripts/index.js
