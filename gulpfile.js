@@ -4,10 +4,8 @@ const gulp = require('gulp'),
       stylus = require('gulp-stylus'),
       swig = require('gulp-swig'),
       babel = require('gulp-babel'),
-      concat = require('gulp-concat'),
       jshint = require('gulp-jshint'),
       stylish = require('jshint-stylish'),
-      uglify = require('gulp-uglify'),
 
 simulateApp = function(){
   process.argv = process.argv.slice(0,2);
@@ -31,16 +29,16 @@ gulp.task('swig', () => {
 
 // Babel compiler
 gulp.task('babel', () => {
-  gulp.src(['scripts/**', '!scripts/soundcove.js'])
+  gulp.src(['scripts/lib/*.js', 'scripts/index.js'])
       .pipe(babel({ presets: ['es2015'] }))
-      .pipe(concat('soundcove.js'))
-      .pipe(uglify())
-      .pipe(gulp.dest('scripts'));
+      .pipe(gulp.dest('scripts/dist'));
 });
 
 // JSHint linter
 gulp.task('lint', () => {
-
+  gulp.src(['scripts/**', '!scripts/soundcove.js'])
+      .pipe(jshint())
+      .pipe(jshint.reporter(stylish));
 });
 
 // Compilation.
