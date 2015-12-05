@@ -18,7 +18,7 @@
   "dependencies": {
     "stylus": "latest",
     "swig": "latest",
-    "babel": "latest",
+    "babel": "latest"
   },
   "devDependencies": {
     "app-server": "soundcove/app-server",
