@@ -4,6 +4,8 @@
   "description": "SoundCove's web client.",
   "main": "index.js",
   "author": "SoundCove",
+  "license": "UNLICENSED",
+  "private": true,
   "homepage": "http://soundcove.io/",
   "bugs": {
     "url": "https://github.com/soundcove/app-client/issues"
