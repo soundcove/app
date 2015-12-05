@@ -21,7 +21,7 @@ gulp.task('stylus', () => {
 
 // Swig compiler
 gulp.task('swig', () => {
-  gulp.src('views/home.html')
+  gulp.src('views/index.html')
       .pipe(swig({defaults: { cache: false }}))
       .pipe(gulp.dest('.'));
 });
