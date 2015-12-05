@@ -12,7 +12,8 @@
   },
   "scripts": {
     "test": "gulp test",
-    "install": "bower install"
+    "install": "bower install",
+    "lint": "gulp lint"
   },
   "repository": {
     "type": "git",
@@ -25,11 +26,13 @@
   },
   "devDependencies": {
     "app-server": "soundcove/app-server",
-    "bower": "latest",
     "babel-preset-es2015": "^6.3.13",
+    "bower": "latest",
+    "jshint": "2.x",
     "gulp": "latest",
     "gulp-babel": "^6.1.1",
     "gulp-concat": "^2.6.0",
+    "gulp-jshint": "latest",
     "gulp-stylus": "^2.1.1",
     "gulp-swig": "^0.8.0"
   }
