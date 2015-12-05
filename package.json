@@ -30,12 +30,16 @@
     "bower": "latest",
     "gulp": "latest",
     "gulp-babel": "^6.1.1",
-    "gulp-concat": "^2.6.0",
     "gulp-jshint": "latest",
     "gulp-stylus": "^2.1.1",
     "gulp-swig": "^0.8.0",
     "gulp-uglify": "^1.5.1",
     "jshint": "2.x",
-    "jshint-stylish": "latest"
+    "jshint-stylish": "latest",
+    "browserify": "latest",
+    "globby": "latest",
+    "through2": "latest",
+    "vinyl-source-stream": "latest",
+    "babelify": "latest"
   }
 }
