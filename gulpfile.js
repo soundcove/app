@@ -4,7 +4,13 @@ const gulp = require('gulp'),
       stylus = require('gulp-stylus'),
       swig = require('gulp-swig'),
       babel = require('gulp-babel'),
-      concat = require('gulp-concat');
+      concat = require('gulp-concat'),
+
+simulateApp = function(){
+  process.argv = process.argv.slice(0,2);
+  process.argv.push(...arguments);
+  require('app-server');
+};
 
 // Stylus compiler
 gulp.task('stylus', () => {
@@ -15,7 +21,7 @@ gulp.task('stylus', () => {
 
 // Swig compiler
 gulp.task('swig', () => {
-  gulp.src(['views/index.html', 'views/home.html'])
+  gulp.src('views/home.html')
       .pipe(swig({defaults: { cache: false }}))
       .pipe(gulp.dest('.'));
 });
@@ -34,11 +40,10 @@ gulp.task('default', [ 'stylus', 'swig', 'babel' ]);
 
 // Testing
 gulp.task('test', function(){
+  gulp.start('stylus', 'swig', 'babel');
   gulp.watch('views/**', [ 'swig' ]);
-  gulp.watch(['styles/**', 'static/index.styl'], [ 'stylus' ]);
-  gulp.watch('scripts/**', [ 'babel' ]);
+  gulp.watch(['styles/components/**', 'styles/index.styl', '!styles/index.css'], [ 'stylus' ]);
+  gulp.watch(['scripts/components/**', '!scripts/index.js'], [ 'babel' ]);
 
-  process.argv = process.argv.slice(0,2);
-  process.argv.push('-c', 'test_config.json');
-  require('app-server');
+  simulateApp('-c', 'test_config.json');
 });
