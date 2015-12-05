@@ -4,9 +4,9 @@ SoundCove's application is single-paged.  It's orientated around dynamic HTML5 U
 ## Contributing
 Assuming you've forked, cloned, and `cd`ed:
 
- 1. `npm install` dependencies.  (this will automatically `bower install` too)
- 2. Start the gulp watcher and [`app-server`](https://github.com/soundcove/app-server) with `npm test`. (or `gulp test`)
- 3. Lint your code with [`jshint`](https://github.com/jshint/jshint).
+ 1. `npm install` to install dependencies.  (this will automatically `bower install` too)
+ 2. `npm test` to start the gulp watchers and `app-server`.
+ 3. `npm run lint` to lint your code.
 
 
 ### Notice
