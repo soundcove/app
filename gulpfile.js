@@ -36,8 +36,7 @@ gulp.task('js', () => {
     .transform('babelify', { presets: ['es2015'] })
     .bundle().on('error', () => {})
     .pipe(source('dist/app.js'))
-    .pipe(gulp.dest('scripts'))
-
+    .pipe(gulp.dest('scripts'));
 });
 
 // JSHint linting errors.

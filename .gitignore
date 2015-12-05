@@ -5,4 +5,4 @@ bower_components
 # Generated
 /index.html
 styles/index.css
-scripts/dist
+scripts/*.js

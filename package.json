@@ -32,6 +32,7 @@
     "browserify": "latest",
     "gulp": "latest",
     "jshint": "2.x",
-    "jshint-stylish": "latest"
+    "jshint-stylish": "latest",
+    "cove": "latest"
   }
 }
