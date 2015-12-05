@@ -1,4 +1,8 @@
 node_modules
 bower_components
 *.log
-*.css
+
+# Generated
+home.html
+styles/index.css
+scripts/index.js
