@@ -1,0 +1,29 @@
+{
+  "name": "app-client",
+  "version": "0.0.0",
+  "description": "SoundCove's web client.",
+  "main": "index.js",
+  "author": "SoundCove",
+  "homepage": "http://soundcove.io/",
+  "bugs": {
+    "url": "https://github.com/soundcove/app-client/issues"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soundcove/app-client.git"
+  },
+  "dependencies": {
+    "stylus": "latest",
+    "swig": "latest",
+    "babel": "latest",
+  },
+  "devDependencies": {
+    "app-server": "soundcove/app-server",
+    "gulp": "latest",
+    "gulp-stylus": "^2.1.1",
+    "gulp-swig": "^0.8.0"
+  }
+}
