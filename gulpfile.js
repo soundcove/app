@@ -1,68 +1,50 @@
 'use strict';
 
+let v = process.argv;
+
 const gulp = require('gulp'),
+      gutil = require('gulp-util'),
       stylus = require('gulp-stylus'),
       swig = require('gulp-swig'),
-      jshint = require('gulp-jshint'),
-      stylish = require('jshint-stylish'),
-      browserify = require('browserify'),
-      source = require('vinyl-source-stream'),
-      uglify = require('gulp-uglify'),
-      rename = require('gulp-rename'),
+      coffee = require('gulp-coffee'),
+      fake = (a) => { process.argv = [ '', '', ...a]; }
 
-simulateApp = function(){
-  process.argv = process.argv.slice(0,2);
-  process.argv.push(...arguments);
-  require('app-server');
-};
+// CoffeeScript
+gulp.task('coffee', () =>
+  gulp
+    .src('scripts/src/*.coffee')
+    .pipe(coffee({ bare: true })
+    .on('error', gutil.log))
+    .pipe(gulp.dest('scripts'))
+);
 
-// Stylus compiler
-gulp.task('stylus', () => {
-  gulp.src('styles/index.styl')
-    .pipe(stylus({ 'compress': true }))
-    .pipe(gulp.dest('styles'));
-});
+// Stylus
+gulp.task('stylus', () =>
+  gulp
+    .src('styles/index.styl')
+    .pipe(stylus())
 
-// Swig compiler
-gulp.task('swig', () => {
+    .pipe(gulp.dest('styles'))
+);
+
+// Swig
+gulp.task('swig', () =>
   gulp.src('views/index.html')
-    .pipe(swig({defaults: { cache: false }}))
-    .pipe(gulp.dest('.'));
-});
-
-// Browserify + Babel compiler
-gulp.task('js', () => {
-  browserify('scripts/app.js')
-    .transform('babelify', { presets: ['es2015'] })
-    .bundle().on('error', () => {})
-    .pipe(source('dist/app.js'))
-    .pipe(gulp.dest('scripts'));
-});
-
-// JSHint linting errors.
-gulp.task('lint', () => {
-  gulp.src(['scripts/*.js'])
-    .pipe(jshint())
-    .pipe(jshint.reporter(stylish));
-});
-
-// Minification.
-gulp.task('minify', [ 'js' ], () => {
-  gulp.src('scripts/dist/app.js')
-    .pipe(uglify())
-    .pipe(rename('app.min.js'))
-    .pipe(gulp.dest('scripts/dist'));
-});
-
-// Compilation.
-gulp.task('default', [ 'stylus', 'swig', 'js', 'lint' ]);
+    .pipe(swig({ defaults:{ cache:false } }))
+    .pipe(gulp.dest('.'))
+);
 
 
-// Testing
-gulp.task('test', function(){
+// Set default to build all
+gulp.task('default', [ 'coffee', 'stylus', 'swig' ]);
+
+// Watch
+gulp.task('watch', [ 'default' ], function(){
   gulp.watch('views/**', [ 'swig' ]);
-  gulp.watch(['styles/**', '!styles/index.css'], [ 'stylus' ]);
-  gulp.watch(['scripts/**', '!scripts/dist/**'], [ 'js', 'lint', 'minify' ]);
+  gulp.watch('scripts/src/*.coffee', [ 'coffee' ]);
+  gulp.watch(['styles/index.styl', 'styles/components/**'], [ 'stylus' ]);
 
-  simulateApp('-c', 'test_config.json');
+  // Create fake app-server:
+  fake(['-c', '.test-config.json'])
+  require('app-server');
 });

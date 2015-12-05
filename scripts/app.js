@@ -1,5 +1,3 @@
-const cove = require('cove');
+var test;
 
-$(() => {
-
-});
+test = 1;

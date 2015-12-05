@@ -11,9 +11,9 @@
     "url": "https://github.com/soundcove/app-client/issues"
   },
   "scripts": {
-    "test": "gulp test --silent",
+    "test": "gulp watch --silent",
     "install": "bower install",
-    "lint": "gulp lint --silent"
+    "test_verbose": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -21,18 +21,13 @@
   },
   "dependencies": {
     "stylus": "latest",
-    "swig": "latest",
-    "babel": "latest"
+    "swig": "latest"
   },
   "devDependencies": {
     "app-server": "soundcove/app-server",
-    "babel-preset-es2015": "^6.3.13",
-    "babelify": "latest",
     "bower": "latest",
     "browserify": "latest",
     "gulp": "latest",
-    "jshint": "2.x",
-    "jshint-stylish": "latest",
-    "cove": "latest"
+    "gulp-coffee": "^2.3.1"
   }
 }
