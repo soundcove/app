@@ -1,2 +1,5 @@
-import foo from './test.js';
-{}
+const
+
+$(() => {
+
+});
