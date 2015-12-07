@@ -1,6 +1,6 @@
 {
   "port": 80,
-  "app": "dist/app.html",
+  "app": "dist/app.min.html",
   "static": "dist",
   "scripts": null,
   "styles": null,
