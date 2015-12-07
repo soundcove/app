@@ -52,6 +52,6 @@ gulp.task('watch', [ 'default' ], function(){
   gulp.watch(['styles/index.styl', 'styles/components/**'], [ 'stylus' ]);
 
   // Create fake app-server:
-  fake(['-c', '.test-config.json']);
+  fake(['-c', 'app.json', '--port=8080', '--serve.maxAge="0"']);
   require('app-server');
 });
