@@ -1,9 +1,9 @@
 {
   "port": 80,
   "app": "dist/app.min.html",
-  "static": "dist",
   "scripts": null,
   "styles": null,
+  "static": "dist",
   "serve": {
     "maxAge": "24h"
   }
