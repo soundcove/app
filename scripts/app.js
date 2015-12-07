@@ -1,3 +1,6 @@
 import app from './test';
+import 'jquery';
 
-console.log(app);
+$(function(){
+  console.log(app);
+});
