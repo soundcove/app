@@ -1,0 +1,13 @@
+{
+  "port": 80,
+  "app": "dist/app.min.html",
+  "scripts": null,
+  "styles": null,
+  "static": {
+    "url": "/dist",
+    "dir": "dist",
+    "options": {
+      "maxAge": "24h"
+    }
+  }
+}
