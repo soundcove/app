@@ -28,9 +28,8 @@
     "bower": "latest",
     "browserify": "latest",
     "gulp": "latest",
-    "gulp-coffee": "^2.3.1",
     "gulp-stylus": "^2.1.1",
-    "gulp-swig": "^0.8.0"
-
+    "gulp-swig": "^0.8.0",
+    "webpack": "^1.12.9"
   }
 }
