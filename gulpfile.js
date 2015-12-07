@@ -9,7 +9,7 @@ const gulp = require('gulp'),
       dist = 'dist/';
 
 // Webpack
-gulp.task('javascript', () =>
+gulp.task('build:javascript', () =>
   gulp.src('scripts/*.js')
     .pipe(webpack({
       output:{ filename:'app.js' },
@@ -25,7 +25,7 @@ gulp.task('javascript', () =>
 );
 
 // Stylus
-gulp.task('stylus', () =>
+gulp.task('build:stylus', () =>
   gulp
     .src('styles/index.styl')
     .pipe(stylus())
@@ -34,22 +34,24 @@ gulp.task('stylus', () =>
 );
 
 // Swig
-gulp.task('swig', () =>
+gulp.task('build:swig', () =>
   gulp.src('views/index.html')
     .pipe(swig({ defaults:{ cache:false } }))
     .pipe(rename('app.html'))
     .pipe(gulp.dest(dist))
 );
 
+// Alias for all
+gulp.task('build', [ 'build:swig', 'build:stylus', 'build:javascript' ]);
 
 // Set default to build all
-gulp.task('default', [ 'javascript', 'stylus', 'swig' ]);
+gulp.task('default', [ 'build' ]);
 
 // Watch
 gulp.task('watch', [ 'default' ], function(){
-  gulp.watch('views/**', [ 'swig' ]);
-  gulp.watch('styles/**', [ 'stylus' ]);
-  gulp.watch('scripts/**', [ 'javascript' ]);
+  gulp.watch('views/**', [ 'build:swig' ]);
+  gulp.watch('styles/**', [ 'build:stylus' ]);
+  gulp.watch('scripts/**', [ 'build:javascript' ]);
 
   // Create fake app-server:
   fake(['-c', 'app.json', '--port=8080', '--serve.maxAge="0"']);
