@@ -48,8 +48,8 @@ gulp.task('default', [ 'javascript', 'stylus', 'swig' ]);
 // Watch
 gulp.task('watch', [ 'default' ], function(){
   gulp.watch('views/**', [ 'swig' ]);
-  gulp.watch('scripts/src/*.js', [ 'javascript' ]);
-  gulp.watch(['styles/index.styl', 'styles/components/**'], [ 'stylus' ]);
+  gulp.watch('styles/**', [ 'stylus' ]);
+  gulp.watch('scripts/**', [ 'javascript' ]);
 
   // Create fake app-server:
   fake(['-c', 'app.json', '--port=8080', '--serve.maxAge="0"']);
