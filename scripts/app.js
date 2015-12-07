@@ -1,3 +1,3 @@
-var test;
+import app from './test';
 
-test = 1;
+console.log(app);
