@@ -1,1 +1,1 @@
-export const app = 'a';
+export default 'a';
