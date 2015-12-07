@@ -10,8 +10,8 @@ const gulp = require('gulp'),
 // CoffeeScript
 gulp.task('javascript', (callback) => {
   webpack({
-    context: __dirname + '/scripts',
-    entry: '.',
+    context: __dirname,
+    entry: __dirname + '/scripts',
     output: {
       path: __dirname + '/dist',
       filename: 'app.js'
@@ -35,7 +35,7 @@ gulp.task('stylus', () =>
 gulp.task('swig', () =>
   gulp.src('views/index.html')
     .pipe(swig({ defaults:{ cache:false } }))
-    .pipe(gulp.dest('.'))
+    .pipe(gulp.dest('dist'))
 );
 
 
