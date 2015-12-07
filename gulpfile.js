@@ -1,30 +1,34 @@
 'use strict';
 
-let v = process.argv;
-
 const gulp = require('gulp'),
       gutil = require('gulp-util'),
+      webpack = require('webpack'),
       stylus = require('gulp-stylus'),
       swig = require('gulp-swig'),
-      coffee = require('gulp-coffee'),
-      fake = (a) => { process.argv = [ '', '', ...a]; }
+      fake = (a) => { process.argv = [ '', '', ...a]; };
 
 // CoffeeScript
-gulp.task('coffee', () =>
-  gulp
-    .src('scripts/src/*.coffee')
-    .pipe(coffee({ bare: true })
-    .on('error', gutil.log))
-    .pipe(gulp.dest('scripts'))
-);
+gulp.task('javascript', (callback) => {
+  webpack({
+    context: __dirname + '/scripts',
+    entry: '.',
+    output: {
+      path: __dirname + '/dist',
+      filename: 'app.js'
+    }
+  }, function(err, stats) {
+      if (err) throw new gutil.PluginError('webpack', err);
+      gutil.log('[webpack]', stats.toString());
+      callback();
+  });
+});
 
 // Stylus
 gulp.task('stylus', () =>
   gulp
     .src('styles/index.styl')
     .pipe(stylus())
-
-    .pipe(gulp.dest('styles'))
+    .pipe(gulp.dest('dist'))
 );
 
 // Swig
@@ -36,15 +40,15 @@ gulp.task('swig', () =>
 
 
 // Set default to build all
-gulp.task('default', [ 'coffee', 'stylus', 'swig' ]);
+gulp.task('default', [ 'javascript', 'stylus', 'swig' ]);
 
 // Watch
 gulp.task('watch', [ 'default' ], function(){
   gulp.watch('views/**', [ 'swig' ]);
-  gulp.watch('scripts/src/*.coffee', [ 'coffee' ]);
+  gulp.watch('scripts/src/*.js', [ 'javascript' ]);
   gulp.watch(['styles/index.styl', 'styles/components/**'], [ 'stylus' ]);
 
   // Create fake app-server:
-  fake(['-c', '.test-config.json'])
+  fake(['-c', '.test-config.json']);
   require('app-server');
 });
