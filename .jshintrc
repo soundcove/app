@@ -12,5 +12,4 @@
   "unused": true,
   "eqnull": true,
   "loopfunc": true,
-  "globals": { "Vue": true }
 }
