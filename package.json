@@ -12,8 +12,8 @@
   },
   "scripts": {
     "test": "gulp watch",
+    "build": "gulp build",
     "install": "bower install",
-    "test_verbose": "gulp watch"
   },
   "repository": {
     "type": "git",
