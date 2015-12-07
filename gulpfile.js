@@ -1,41 +1,44 @@
 'use strict';
 
 const gulp = require('gulp'),
-      gutil = require('gulp-util'),
-      webpack = require('webpack'),
+      webpack = require('gulp-webpack'),
       stylus = require('gulp-stylus'),
+      rename = require('gulp-rename'),
       swig = require('gulp-swig'),
-      fake = (a) => { process.argv = [ '', '', ...a]; };
+      fake = (a) => { process.argv = [ '', '', ...a]; },
+      dist = 'dist/';
 
-// CoffeeScript
-gulp.task('javascript', (callback) => {
-  webpack({
-    context: __dirname,
-    entry: __dirname + '/scripts',
-    output: {
-      path: __dirname + '/dist',
-      filename: 'app.js'
-    }
-  }, function(err, stats) {
-      if (err) throw new gutil.PluginError('webpack', err);
-      gutil.log('[webpack]', stats.toString());
-      callback();
-  });
-});
+// Webpack
+gulp.task('javascript', () =>
+  gulp.src('scripts/*.js')
+    .pipe(webpack({
+      output:{ filename:'app.js' },
+      module:{ loaders:[
+        {
+          loader:'babel', test:/\.jsx?$/,
+          exclude:/(node_modules|bower_components|dist)/,
+          query:{ presets:[ 'es2015' ], plugins:[ 'transform-runtime' ] }
+        }
+      ]}
+    }))
+    .pipe(gulp.dest(dist))
+);
 
 // Stylus
 gulp.task('stylus', () =>
   gulp
     .src('styles/index.styl')
     .pipe(stylus())
-    .pipe(gulp.dest('dist'))
+    .pipe(rename('app.css'))
+    .pipe(gulp.dest(dist))
 );
 
 // Swig
 gulp.task('swig', () =>
   gulp.src('views/index.html')
     .pipe(swig({ defaults:{ cache:false } }))
-    .pipe(gulp.dest('dist'))
+    .pipe(rename('app.html'))
+    .pipe(gulp.dest(dist))
 );
 
 
