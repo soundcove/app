@@ -13,7 +13,7 @@
   "scripts": {
     "test": "gulp watch",
     "build": "gulp build",
-    "install": "bower install"
+    "min": "gulp minify"
   },
   "repository": {
     "type": "git",
