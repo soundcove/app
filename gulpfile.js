@@ -82,7 +82,6 @@ gulp.task('build', [
 
 // Minify
 gulp.task('minify', [
-  'build',
   'minify:javascript',
   'minify:css',
   'minify:html'
@@ -98,6 +97,6 @@ gulp.task('watch', [ 'minify' ], function(){
   gulp.watch('scripts/**', [ 'build:javascript', 'minify:javascript' ]);
 
   // Create fake app-server:
-  fake([ '-c', 'app.json', '--port=8080', '--serve.maxAge="0"' ]);
+  fake([ '-c', 'app.json', '--port=8080', '--static.maxAge="0"' ]);
   require('app-server');
 });
