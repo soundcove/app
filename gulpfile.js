@@ -53,21 +53,18 @@ gulp.task('build:swig', () =>
 // Minification
 gulp.task('minify:javascript', [ 'build:javascript' ], () =>
   gulp.src('dist/app.js')
-    .pipe(rename('app.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('dist'))
 );
 
 gulp.task('minify:css', [ 'build:stylus' ], () =>
   gulp.src('dist/app.css')
-    .pipe(rename('app.min.css'))
     .pipe(minCSS())
     .pipe(gulp.dest('dist'))
 );
 
 gulp.task('minify:html', [ 'build:swig' ], () =>
   gulp.src('dist/app.html')
-    .pipe(rename('app.min.html'))
     .pipe(minHTML())
     .pipe(gulp.dest('dist'))
 );
@@ -88,15 +85,15 @@ gulp.task('minify', [
 ]);
 
 // Alias for build & minify
-gulp.task('default', [ 'minify' ]);
+gulp.task('default', [ 'build' ]);
 
 // Watch
-gulp.task('watch', [ 'minify' ], function(){
-  gulp.watch('views/**', [ 'build:swig', 'minify:html' ]);
-  gulp.watch('styles/**', [ 'build:stylus', 'minify:css' ]);
-  gulp.watch('scripts/**', [ 'build:javascript', 'minify:javascript' ]);
+gulp.task('watch', [ 'build' ], function(){
+  gulp.watch('views/**', [ 'build:swig' ]);
+  gulp.watch('styles/**', [ 'build:stylus' ]);
+  gulp.watch('scripts/**', [ 'build:javascript' ]);
 
   // Create fake app-server:
-  fake([ '-c', 'app.json', '--port=8080', '--static.maxAge="0"' ]);
+  fake([ '-c', 'fake-app.json' ]);
   require('app-server');
 });

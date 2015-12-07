@@ -1,5 +1,5 @@
 import app from './test';
-import 'jquery';
+import $ from 'jquery';
 
 $(function(){
   console.log(app);
