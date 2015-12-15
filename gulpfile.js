@@ -20,7 +20,7 @@ let config = {
     {
       loader: 'babel', test: /\.jsx?$/,
       exclude: /(node_modules|dist)/,
-      query: {presets: ['es2015'], plugins: ['transform-runtime']}
+      query: {presets: ['react', 'es2015'], plugins: ['transform-runtime']}
     }
   ]}
 };
