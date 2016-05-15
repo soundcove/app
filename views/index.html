@@ -7,6 +7,9 @@
     <link href='/dist/app.css' rel='stylesheet' type='text/css'>
   </head>
   <body class='temp-master -fill -nopad -flex'>
-    <div class='soon'>SoundCove comming soon.</div>
+    <div id="app">
+      <a v-link="{path: '/bar'}">bar</a>
+      <router-view></router-view>
+    </div>
   </body>
 </html>

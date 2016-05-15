@@ -18,9 +18,9 @@ let config = {
   cache: false,
   module: {loaders: [
     {
-      loader: 'babel', test: /\.jsx?$/,
+      loader: 'babel',
       exclude: /(node_modules|dist)/,
-      query: {presets: ['react', 'es2015'], plugins: ['transform-runtime']}
+      query: {presets: ['es2015'], plugins: ['transform-runtime']}
     }
   ]}
 };
