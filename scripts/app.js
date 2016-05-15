@@ -13,10 +13,7 @@ const Welcome = Vue.extend({
 
 router.map({
   '/': {
-    component: Foo
-  },
-  '/bar': {
-    component: Bar
+    component: Welcome
   }
 });
 
