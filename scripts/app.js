@@ -1,10 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import $ from 'jquery';
 
-var HelloMessage = React.createClass({
-  render: function() {
-    return <div>Hello {this.props.name}</div>;
+Vue.use(VueRouter);
+
+const App = Vue.extend({});
+const router = new VueRouter();
+
+const Welcome = Vue.extend({
+  template: '<p>Welcome Home</p>'
+});
+
+router.map({
+  '/': {
+    component: Foo
+  },
+  '/bar': {
+    component: Bar
   }
 });
 
-ReactDOM.render(<HelloMessage name="John" />, document.body);
+$(function() {
+  router.start(App, '#app');
+});

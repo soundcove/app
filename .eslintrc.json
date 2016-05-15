@@ -10,7 +10,6 @@
       "es6": true
     },
     "rules": {
-      "no-mixed-requires": [0, {"grouping": true}],
       "one-var": [0, "always"]
     }
 }
