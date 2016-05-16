@@ -11,22 +11,22 @@ var uglify = require('gulp-uglify')
 
 // Sass
 gulp.task('sass', function () {
-  gulp.src('source/**/*.scss')
+  gulp.src('styles/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest(''))
 })
 
 // Browserify
 gulp.task('browserify', function() {
-  browserify('./source/index.js').bundle()
+  browserify('./index.js').bundle()
     .pipe(source('index.js'))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest(''))
 })
 
 // Watch
-gulp.task('watch', ['build'], function() {
-  gulp.watch('styles/**', ['build:sass']);
-  gulp.watch('scripts/**', ['build:javascript']);
+gulp.task('watch', function() {
+  gulp.watch('styles/**', ['sass']);
+  gulp.watch('scripts/**', ['browserify']);
 
   // Create fake app-server:
   fake(['-c', 'fake-app.json']);
