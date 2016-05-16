@@ -14,16 +14,19 @@
 
 
 // Global styles
-.-nopad
-  margin 0
-  padding 0
+.-nopad {
+  margin: 0;
+  padding: 0;
+}
 
-.-fill
-  width 100%
-  height 100%
+.-fill {
+  width: 100%;
+  height: 100%;
+}
 
-.-flex
-  display flex !important
+.-flex {
+  display: flex !important;
+}
 
 // Import components
 @import 'components/*';
