@@ -1,0 +1,19 @@
+{
+  "name": "app-client",
+  "description": "SoundCove's application.",
+  "main": "index.js",
+  "author": "SoundCove",
+  "license": "UNLICENSED",
+  "homepage": "http://soundcove.io/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "devDependencies": {
+    "color-sass": "^1.0.1",
+    "pilot-reset": "^1.0.0-alpha8",
+    "mint-sass": "^1.1.0"
+  },
+  "private": true
+}
