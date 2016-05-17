@@ -1,0 +1,26 @@
+@import 'bower_components/color-sass/scss/main';
+@import 'bower_components/pilot-reset/scss/main';
+@import 'bower_components/mint-sass/scss/main';
+
+body {
+  color: $white;
+  // font-family: 'HelveticaNeue-CondensedBold';
+}
+
+@import 'variables';
+@import 'placeholders';
+@import 'layout';
+@import 'nav';
+@import 'queue';
+@import 'album';
+@import 'chat';
+@import 'track';
+
+@keyframes bass {
+  0%, 100% { transform: scale(1);   }
+  10%, 90% { transform: scale(1.15); }
+  20%, 80% { transform: scale(1.1); }
+  30%, 70% { transform: scale(1.05); }
+  40%, 60% { transform: scale(1.1); }
+  50%      { transform: scale(1.05); }
+}
