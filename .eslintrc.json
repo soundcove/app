@@ -1,6 +1,5 @@
 {
     "extends": "google",
-    "plugins": [ "react" ],
     "ecmaFeatures": {
       "modules": true
     },
