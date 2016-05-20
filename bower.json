@@ -1,5 +1,5 @@
 {
-  "name": "app-client",
+  "name": "app",
   "description": "SoundCove's application.",
   "main": "index.js",
   "author": "SoundCove",

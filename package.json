@@ -1,5 +1,5 @@
 {
-  "name": "app-client",
+  "name": "app",
   "version": "1.0.1",
   "description": "SoundCove's client.",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/soundcove/app-client.git"
+    "url": "git+https://github.com/soundcove/app.git"
   },
   "author": "SoundCove",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/soundcove/app-client/issues"
+    "url": "https://github.com/soundcove/app/issues"
   },
-  "homepage": "https://github.com/soundcove/app-client#readme",
+  "homepage": "https://github.com/soundcove/app#readme",
   "dependencies": {
     "vue": "^1.0.24"
   },
