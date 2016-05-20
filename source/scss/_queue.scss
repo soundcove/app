@@ -1,0 +1,13 @@
+.queue {
+  flex: 1;
+  // overflow: auto;
+}
+
+.queue-item {
+  @extend %ellipsis;
+  padding: 0.5em 1em;
+
+  &:nth-child(even) {
+    background: rgba($black, 0.2);
+  }
+}

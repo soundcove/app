@@ -1,0 +1,25 @@
+$nav-width: 3em !default;
+$bar-min-width: 10em !default;
+
+// $bar-max-width: 50vh !default;
+// $album-max-height: 20vw !default;
+
+$max-sidebar-width: 60em / 6;
+
+$blue:   mix(#06f, #09f);
+$orange: mix(#f60, #f90);
+
+$navy: mix($blue, $black);
+
+$color-root:    rgba($navy, 0.2);
+
+$color-ad:      rgba($black, 0.3);
+$color-album:   rgba($black, 0.5);
+$color-bar:     rgba($black, 0.6);
+$color-body:    rgba($black, 0.8);
+$color-control: rgba($black, 0.4);
+$color-message: rgba($black, 0.3);
+$color-nav:     rgba($black, 0.6);
+$color-profile: rgba($black, 0.3);
+$color-title:   rgba($black, 0.4);
+$color-user:    rgba($black, 0.2);

@@ -1,0 +1,45 @@
+.chat {
+  flex: 1;
+
+  > .chat-message {
+    display: flex;
+    padding: em(8);
+
+    > .chat-avatar {
+      width: 2em;
+      height: 2em;
+      margin: em(8);
+      border-radius: 50%;
+      background: $black;
+    }
+
+    > .chat-group {
+      margin: em(8);
+
+      > .chat-text {
+        min-height: em(32);
+        padding: em(8 12);
+        border-radius: em(4 16 16 4);
+        background: $orange;
+
+        > .chat-span {
+          font-size: em(14);
+          line-height: un(16, 14);
+        }
+
+        &:first-child { border-radius: em(16 16 16 4); }
+        &:last-child  { border-radius: em(4 16 16);    }
+        &:only-child  { border-radius: em(16);         }
+
+        + .chat-text {
+          margin: em(4 0 0);
+        }
+      }
+    }
+  }
+}
+
+.message {
+  height: 6em;
+  background: $color-message;
+}

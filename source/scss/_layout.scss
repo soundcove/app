@@ -1,0 +1,58 @@
+body {
+  background: $color-body;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: $color-root;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+}
+
+.ad {
+  height: 6em;
+  background: $color-ad;
+}
+
+.title {
+  padding: 0.5em 1em;
+  background: $color-title;
+}
+
+.side {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  min-width: $bar-min-width;
+
+  // &.-left {}
+
+  // &.-right {}
+}
+
+.center {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.control {
+  height: 4em;
+  // padding: 2em;
+  background: $color-control;
+}
+
+.profile {
+  height: 4em;
+  background: $color-profile;
+}
+
+.user {
+  flex: 1;
+  background: $color-user;
+}
