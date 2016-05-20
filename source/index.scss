@@ -7,20 +7,20 @@ body {
   // font-family: 'HelveticaNeue-CondensedBold';
 }
 
-@import 'variables';
-@import 'placeholders';
-@import 'layout';
-@import 'nav';
-@import 'queue';
-@import 'album';
-@import 'chat';
-@import 'track';
+@import 'scss/variables';
+@import 'scss/placeholders';
+@import 'scss/layout';
+@import 'scss/nav';
+@import 'scss/queue';
+@import 'scss/album';
+@import 'scss/chat';
+@import 'scss/track';
 
 @keyframes bass {
-  0%, 100% { transform: scale(1);   }
+  0%, 100% { transform: scale(1);    }
   10%, 90% { transform: scale(1.15); }
-  20%, 80% { transform: scale(1.1); }
+  20%, 80% { transform: scale(1.1);  }
   30%, 70% { transform: scale(1.05); }
-  40%, 60% { transform: scale(1.1); }
+  40%, 60% { transform: scale(1.1);  }
   50%      { transform: scale(1.05); }
 }
