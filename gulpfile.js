@@ -11,14 +11,14 @@ var jade = require('gulp-jade')
 
 // Sass
 gulp.task('sass', function () {
-  gulp.src('scss/**/*.scss')
+  gulp.src('source/index.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('css'))
 })
 
 // Jade
 gulp.task('jade', function () {
-  gulp.src('*.jade')
+  gulp.src('source/index.jade')
     .pipe(jade({ pretty: true }))
     .pipe(gulp.dest(''))
 })
@@ -36,7 +36,6 @@ gulp.task('build', ['sass', 'jade'])
 
 // Watch
 gulp.task('watch', function () {
-  gulp.watch('scss/**/*.scss', ['build'])
-  gulp.watch('index.jade',     ['build'])
+  gulp.watch('source/**/*', ['build'])
   // gulp.watch('index.js',       ['build'])
 })
