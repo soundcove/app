@@ -25,17 +25,15 @@ gulp.task('jade', function () {
 
 // Browserify
 gulp.task('browserify', function() {
-  browserify('./index.js').bundle()
+  browserify('./source/index.js').bundle()
     .pipe(source('index.js'))
-    .pipe(gulp.dest(''))
+    .pipe(gulp.dest('./'))
 })
 
 // Build
-gulp.task('build', ['sass', 'jade'])
-// gulp.task('build', ['sass', 'jade', 'browserify'])
+gulp.task('build', ['sass', 'jade', 'browserify'])
 
 // Watch
 gulp.task('watch', function () {
   gulp.watch('source/**/*', ['build'])
-  // gulp.watch('index.js',       ['build'])
 })

@@ -5,7 +5,10 @@ html(lang='en-us')
     meta(name='viewport' content='width=device-width' initial-scale='1')
     link(href='css/index.css' rel='stylesheet' type='text/css')
   body
-    .root
+    .root#root
+
+      div#test
+        h1(v-on:click='toggle') right
 
       .bar
         .bar-left
@@ -15,56 +18,10 @@ html(lang='en-us')
         .bar-right
           .item
 
-      //- .nav.-top
-        .nav-item
-          .nav-border
-          .nav-icon
-          .nav-text DJ Playlist
-        .nav-item
-          .nav-border
-          .nav-icon
-          .nav-text DJ Playlist
-
-
       .main
-        .nav.-left
-          .nav-item
-            .nav-border
-            .nav-icon
-              img(src='icons/record.png')
-            .nav-text
-              span.text DJ Queue
-          .nav-item
-            .nav-border
-            .nav-icon
-              img(src='icons/note.png')
-            .nav-text
-              span.text My Queue
-          .nav-item.-open
-            .nav-border
-            .nav-icon
-              img(src='icons/note.png')
-            .nav-text
-              span.text My Songs
-            .nav-tip
-              span.text My Songs
-        .side.-left
-          .title Songs
-          .queue
-            .queue-item All The Time - Bahamas
-            .queue-item All The Time - Bahamas
-            .queue-item All The Time - Bahamas
-            .queue-item All The Time - Bahamas
-            .queue-item All The Time - Bahamas
-            .queue-item All The Time - Bahamas
-            .queue-item All The Time - Bahamas
-            .queue-item All The Time - Bahamas
-            .queue-item All The Time - Bahamas
-            .queue-item All The Time - Bahamas
-            .queue-item All The Time - Bahamas
-          .album
-            .album-placeholder
-            .album-cover
+        include jade/nav-left.jade
+        include jade/side-left.jade
+
         .center
 
           a.button.-okay(href='google.com') hello
@@ -74,56 +31,10 @@ html(lang='en-us')
           a.button.-dark(href='google.com') hello
 
           //- .ad
-          .chat
-            .chat-message
-              .chat-avatar
-              .chat-group
-                .chat-text
-                  .chat-span Hello World!
-                .chat-text
-                  .chat-span Hello World!
-                .chat-text
-                  .chat-span Hello World!
-              .chat-attach
-            .chat-message
-              .chat-avatar
-              .chat-group
-                .chat-text
-                  span.chat-span Hello World!
-              .chat-attach
-          .message
-          .control
-            .track
-              .track-dot.-left
-              .track-dot.-right
-              .track-slide
-              //- .track-bar
-              //- .track-knob
-            .track
-              .track-dot.-left
-              .track-dot.-right
-              .track-slide
-              //- .track-bar
-              //- .track-knob
-        .side.-right
-          .title Friends
-          .profile
-          .user
-          .control
-        .nav.-right
-          .nav-item
-            .nav-border
-            .nav-icon
-              img(src='icons/cog.png')
-            .nav-text Lobbies
-          .nav-item.-open
-            .nav-border
-            .nav-icon
-              img(src='icons/cog.png')
-            .nav-text Friends
-          .nav-item
-            .nav-border
-            .nav-icon
-              img(src='icons/cog.png')
-            .nav-text Settings
-            .nav-tip Settings
+          include jade/chat.jade
+
+        include jade/side-right.jade
+        include jade/nav-right.jade
+
+    script(src='node_modules/vue/dist/vue.min.js')
+    script(src='index.js')

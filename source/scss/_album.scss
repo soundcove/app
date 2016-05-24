@@ -10,7 +10,7 @@
 
 .album-placeholder {
   @extend %album-position;
-  background-image: url('../logo-beta-badge.svg');
+  // background-image: url('../logo-beta-badge.svg');
   background-size: calc(100% - 3em);
 }
 

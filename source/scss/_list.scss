@@ -1,0 +1,13 @@
+.list {
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
+
+  &.-row {
+    flex-flow: row;
+  }
+
+  &.-nest {
+    background: rgba($black, 0.25);
+  }
+}
