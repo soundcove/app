@@ -7,15 +7,12 @@ body {
   flex-direction: column;
   height: 100vh;
   background: $color-root;
-  // background: $green;
-  // background: $blue;
-  // background: $white;
 }
 
-.main {
-  flex: 1;
-  display: flex;
-}
+// .main {
+//   flex: 1;
+//   display: flex;
+// }
 
 .ad {
   height: 6em;
@@ -27,16 +24,16 @@ body {
   background: $color-title;
 }
 
-.side {
-  flex: 1;
-  display: flex;
-  flex-flow: column;
-  min-width: $bar-min-width;
-
-  // &.-left {}
-
-  // &.-right {}
-}
+// .side_old {
+//   flex: 1;
+//   display: flex;
+//   flex-flow: column;
+//   min-width: $bar-min-width;
+//
+//   // &.-left {}
+//
+//   // &.-right {}
+// }
 
 .center {
   flex: 2;

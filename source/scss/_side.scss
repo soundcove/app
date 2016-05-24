@@ -1,0 +1,18 @@
+.side {
+  display: flex;
+  flex-wrap: wrap;
+
+  > .side-slot {
+    &.-top {
+      width: 100%;
+    }
+
+    &.-left {
+      flex: 1;
+    }
+
+    &.-right {
+      flex: 1;
+    }
+  }
+}

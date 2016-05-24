@@ -1,18 +1,19 @@
+mixin chat-text
+  .chat-text
+    span.text
+      block
+
 .chat
   .chat-message
     .chat-avatar
     .chat-group
-      .chat-text
-        .chat-span Hello World!
-      .chat-text
-        .chat-span Hello World!
-      .chat-text
-        .chat-span Hello World!
+      +chat-text Hello World!
+      +chat-text Hello World!
+      +chat-text Hello World!
     .chat-attach
   .chat-message
     .chat-avatar
     .chat-group
-      .chat-text
-        span.chat-span Hello World!
+      +chat-text Hello World!
     .chat-attach
 .message

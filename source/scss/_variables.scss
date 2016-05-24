@@ -1,9 +1,17 @@
-$nav-width: 3em !default;
+$nav-width: em(48) !default;
+
+$font-size: 16 !default;
+
+
+
+
+
+
+// questionable variables:
+
 $bar-min-width: 10em !default;
 
 // $bar-max-width: 50vh !default;
 // $album-max-height: 20vw !default;
 
 $max-sidebar-width: 60em / 6;
-
-$font-size: 14 !default;

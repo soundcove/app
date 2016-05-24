@@ -1,0 +1,12 @@
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: em($font-size * 1.5);
+  height: em($font-size * 1.5);
+
+  > .icon-resource {
+    width: 100%;
+    height: 100%;
+  }
+}

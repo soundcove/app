@@ -1,6 +1,4 @@
 .text {
-  font-size: em($font-size);
-  font-weight: 200;
-  letter-spacing: 1;
+  letter-spacing: em(1);
   line-height: un(24);
 }

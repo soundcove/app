@@ -7,18 +7,12 @@ html(lang='en-us')
   body
     .root#root
 
-      div#test
-        h1(v-on:click='toggle') right
+      include jade/side.jade
 
-      .bar
-        .bar-left
-          .item
-        .bar-center
-          .item
-        .bar-right
-          .item
+      //- div#test
+        //- h1(v-on:click='toggle') right
 
-      .main
+      //- .main
         include jade/nav-left.jade
         include jade/side-left.jade
 

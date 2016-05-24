@@ -1,32 +1,3 @@
-.bar {
-  display: flex;
-  height: $nav-width;
-  background: black;
-
-  > .bar-left {
-    flex: 1;
-    display: flex;
-  }
-
-  > .bar-center {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-
-  > .bar-right {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-
-
-
-
-
-
-
 .nav {
   @extend %transition;
   flex: 0;

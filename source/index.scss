@@ -8,24 +8,26 @@
 @import 'scss/placeholders';
 @import 'scss/animations';
 
-@import 'scss/font-face';
+// @import 'scss/font-face';
 
 body {
   color: $white;
   font-family: 'Open Sans', sans-serif;
-  font-size: $font-size;
+  font-size: em($font-size);
 }
 
 // Micro Components
 @import 'scss/text';
 
+@import 'scss/side';
+@import 'scss/bar';
 @import 'scss/list';
 @import 'scss/item';
+@import 'scss/icon';
+
 
 @import 'scss/layout';
-@import 'scss/nav';
 @import 'scss/queue';
 @import 'scss/album';
 @import 'scss/button';
 @import 'scss/chat';
-@import 'scss/track';
