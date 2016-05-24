@@ -1,0 +1,42 @@
+$inset: inset em(1) em(1) 0 0 rgba($white, 0.25);
+$outset:      em(1) em(1) 0 0 rgba($white, 0.0625);
+
+.button {
+  display: block;
+  width: em(96);
+  margin: em(4); // temp
+  padding: em(8 16);
+  border: solid em(1) $black;
+  border-radius: em(3);
+  color: $white;
+  text-align: center;
+  box-shadow: $inset, $outset;
+
+  &.-okay   { background: linear-gradient($green-lite,  $green-dark);    }
+  &.-blue   { background: linear-gradient($blue-lite,   $blue-dark);   }
+  &.-orange { background: linear-gradient($orange-lite, $orange-dark); }
+  &.-error  { background: linear-gradient($red-lite,    $red-dark);    }
+
+  $dark: mix($navy, $black, 12.5%);
+
+  &.-dark {
+    $inset: inset em(1) em(1) 0 0 rgba($white, 0.0625);
+
+    background: linear-gradient(
+      mix($dark, $white, 75%),
+      mix($dark, $white, 87.5%)
+    );
+    box-shadow: $inset, $outset;
+  }
+
+  // &.-transparent {
+  //   background: linear-gradient(
+  //     rgba($black, 0),
+  //     rgba($black, 0.5)
+  //   );
+  //   box-shadow:
+  //     inset 0 0 0 em(1) $black,
+  //     inset 0 em(2) 0 0 rgba($white, 0.125),
+  //           0 em(1) 0 0 rgba($white, 0.125);
+  // }
+}
