@@ -22,10 +22,10 @@
         border-radius: em(4 16 16 4);
         background: $orange;
 
-        > .chat-span {
-          font-size: em(14);
-          line-height: un(16, 14);
-        }
+        // > .chat-span {
+        //   font-size: em(14);
+        //   line-height: un(16, 14);
+        // }
 
         &:first-child { border-radius: em(16 16 16 4); }
         &:last-child  { border-radius: em(4 16 16);    }

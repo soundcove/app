@@ -2,13 +2,19 @@
 @import 'bower_components/pilot-reset/scss/main';
 @import 'bower_components/mint-sass/scss/main';
 
-body {
-  color: $white;
-}
-
 @import 'scss/variables';
+@import 'scss/colors';
+
 @import 'scss/placeholders';
 @import 'scss/animations';
+
+@import 'scss/font-face';
+
+body {
+  color: $white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: $font-size;
+}
 
 // Micro Components
 @import 'scss/text';
