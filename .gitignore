@@ -2,6 +2,10 @@ bower_components
 node_modules
 *.log
 
-css
 index.html
+index.css
 index.js
+
+_old_icons
+junk.txt
+logo-beta.png
