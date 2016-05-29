@@ -2,9 +2,8 @@ bower_components
 node_modules
 *.log
 
+tmp
 index.html
-index.css
-index.js
 
 _old_icons
 junk.txt
