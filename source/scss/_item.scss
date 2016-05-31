@@ -4,8 +4,11 @@
   align-items: center;
   padding: em(4 6);
   color: $white;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 
-  > .item-slot {
+  .item-slot {
     padding: em(4 6);
 
     &:only-child {

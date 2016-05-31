@@ -1,19 +1,20 @@
 .album {
   padding: 100% 0 0;
   background: $color-album;
-}
 
-%album-position {
-  @include reset-position;
-  position: absolute;
-}
+  .album-cover,
+  .album-placeholder {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 
-.album-placeholder {
-  @extend %album-position;
-  // background-image: url('../logo-beta-badge.svg');
-  background-size: calc(100% - 3em);
-}
+  // .album-cover {}
 
-.album-cover {
-  @extend %album-position;
+  .album-placeholder {
+    // background-image: url('../logo-beta-badge.svg');
+    background-size: calc(100% - 3em);
+  }
 }

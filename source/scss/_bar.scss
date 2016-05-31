@@ -3,16 +3,12 @@
   height: $nav-width;
   background: $black;
 
-  > .bar-slot {
+  .bar-slot {
     flex: 1;
     display: flex;
 
     &.-start {
       justify-content: flex-start;
-    }
-
-    &.-center {
-      justify-content: center;
     }
 
     &.-end {

@@ -1,6 +1,17 @@
 .layout {
   display: flex;
-  flex-direction: column;
   height: 100vh;
   background: $color-root;
+
+  .layout-slot {
+    flex: 1;
+
+    // &.-left {}
+
+    &.-center {
+      flex: 2;
+    }
+
+    // &.-right {}
+  }
 }

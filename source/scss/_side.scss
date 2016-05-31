@@ -1,8 +1,19 @@
 .side {
   display: flex;
-  flex-wrap: wrap;
 
-  > .side-slot {
-    flex: 1;
+  .side-slot {
+    flex: 2;
+
+    &.-nav {
+      flex: 1;
+    }
+  }
+
+  &.-is-toggle {
+    .side-slot {
+      &.-nav {
+        max-width: em(40);
+      }
+    }
   }
 }
