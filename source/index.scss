@@ -18,15 +18,50 @@ body {
 // Micro Components
 @import 'scss/text';
 
-@import 'scss/side';
 @import 'scss/bar';
-@import 'scss/list';
 @import 'scss/item';
 @import 'scss/icon';
-
-
 @import 'scss/layout';
+@import 'scss/list';
+@import 'scss/side';
+
 @import 'scss/queue';
 @import 'scss/album';
 @import 'scss/button';
 @import 'scss/chat';
+
+body {
+  background: $color-body;
+}
+
+.ad {
+  height: 6em;
+  background: $color-ad;
+}
+
+.title {
+  padding: 0.5em 1em;
+  background: $color-title;
+}
+
+.center {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.control {
+  height: 4em;
+  // padding: 2em;
+  background: $color-control;
+}
+
+.profile {
+  height: 4em;
+  background: $color-profile;
+}
+
+.user {
+  flex: 1;
+  background: $color-user;
+}
