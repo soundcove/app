@@ -10,27 +10,6 @@ html(lang='en-us')
 
     include jade/layout.jade
 
-      //- div#test
-        //- h1(v-on:click='toggle') right
-
-      //- .main
-        include jade/nav-left.jade
-        include jade/side-left.jade
-
-        .center
-
-          a.button.-okay(href='google.com') hello
-          a.button.-blue(href='google.com') hello
-          a.button.-orange(href='google.com') hello
-          a.button.-error(href='google.com') hello
-          a.button.-dark(href='google.com') hello
-
-          //- .ad
-          include jade/chat.jade
-
-        include jade/side-right.jade
-        include jade/nav-right.jade
-
     script(src='node_modules/vue/dist/vue.min.js')
     script
       include ../tmp/index.js
