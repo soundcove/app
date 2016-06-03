@@ -4,29 +4,33 @@ var gulp       = require('gulp')
 var browserify = require('browserify')
 var source     = require('vinyl-source-stream')
 
-var sass = require('gulp-sass')
-var jade = require('gulp-jade')
+var sass    = require('gulp-sass')
+var jade    = require('gulp-jade')
+var postcss = require('gulp-postcss')
 
-gulp.task('sass', function () {
-  gulp.src('source/index.scss')
-    .pipe(sass().on('error', sass.logError))
+var autoprefixer = require('autoprefixer')
+
+gulp.task('css', function () {
+  gulp.src('src/index.scss')
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(postcss([ autoprefixer ]))
     .pipe(gulp.dest('tmp/'))
 })
 
 gulp.task('browserify', function() {
-  browserify('./source/index.js').bundle()
+  browserify('src/index.js').bundle()
     .pipe(source('index.js'))
-    .pipe(gulp.dest('./tmp/'))
+    .pipe(gulp.dest('tmp/'))
 })
 
-gulp.task('jade', ['sass', 'browserify'], function () {
-  gulp.src('source/index.jade')
+gulp.task('jade', function () {
+  gulp.src('src/index.jade')
     .pipe(jade())
     .pipe(gulp.dest(''))
 })
 
-gulp.task('build', ['jade'])
-
 gulp.task('watch', function () {
-  gulp.watch('source/**/*', ['build'])
+  gulp.watch('src/**/*', ['jade'])
+  gulp.watch('src/**/*', ['css', 'browserify'])
+  gulp.watch('tmp/**/*', ['jade'])
 })
