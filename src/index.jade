@@ -1,3 +1,7 @@
+mixin use(href)
+  svg(role='img' style='width: 16px; height: 16px;')
+    use(xlink:href=href)
+
 doctype
 html(lang='en-us')
   head
@@ -7,6 +11,10 @@ html(lang='en-us')
       include ../tmp/index.css
 
   body
+    include ../tmp/svg-symbols.svg
+
+    +use('record_16')
+    +use('sound_16')
 
     include jade/layout.jade
 
