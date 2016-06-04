@@ -13,7 +13,8 @@ var autoprefixer = require('autoprefixer')
 
 gulp.task('css', function () {
   gulp.src('src/index.scss')
-    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    // .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(sass().on('error', sass.logError))
     .pipe(postcss([ autoprefixer ]))
     .pipe(gulp.dest('tmp/'))
 })
@@ -32,12 +33,13 @@ gulp.task('svg', function () {
 
 gulp.task('jade', function () {
   gulp.src('src/index.jade')
-    .pipe(jade())
+    // .pipe(jade())
+    .pipe(jade({pretty: true}))
     .pipe(gulp.dest(''))
 })
 
 gulp.task('watch', function () {
   gulp.watch('src/**/*', ['jade'])
-  gulp.watch('src/**/*', ['css', 'browserify'])
+  gulp.watch('src/**/*', ['svg', 'css', 'browserify'])
   gulp.watch('tmp/**/*', ['jade'])
 })
