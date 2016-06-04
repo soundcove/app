@@ -18,7 +18,7 @@ gulp.task('css', function () {
     .pipe(gulp.dest('tmp/'))
 })
 
-gulp.task('browserify', function() {
+gulp.task('browserify', function () {
   browserify('src/index.js').bundle()
     .pipe(source('index.js'))
     .pipe(gulp.dest('tmp/'))
