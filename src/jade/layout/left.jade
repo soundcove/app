@@ -1,6 +1,6 @@
 include left/bar.jade
 
-.side.-is-toggle
+.side.-is-toggle(v-bind:class="{ '-is-toggle': isToggle }")
   .side-slot.-nav
     include left/nav.jade
 
