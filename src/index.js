@@ -20,3 +20,14 @@ new Vue({
 //     require('vue-hash-router')
 //   ]
 // })
+
+
+
+
+
+
+
+new Vue({
+  el: '#left',
+  mixins: [toggle]
+})

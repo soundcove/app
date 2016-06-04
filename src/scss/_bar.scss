@@ -1,6 +1,6 @@
 .bar {
   display: flex;
-  height: $nav-width;
+  height: em(40);
   background: $black;
 
   .bar-slot {

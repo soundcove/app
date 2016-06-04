@@ -1,15 +1,16 @@
 .item {
-  flex-shrink: 0;
   display: flex;
   align-items: center;
   padding: em(4 6);
   color: $white;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  -webkit-user-select: none;
 
   .item-slot {
+    flex-shrink: 0;
     padding: em(4 6);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 
     &:only-child {
       padding: em(4 6 4 34);
