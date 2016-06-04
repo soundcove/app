@@ -1,40 +1,61 @@
 .chat {
-  flex: 1;
+  // display: flex;
+  // flex: 1;
+}
 
-  > .chat-message {
-    display: flex;
-    padding: em(8);
+.chat-avatar {
+  position: absolute;
+  bottom: 0;
 
-    > .chat-avatar {
-      width: 2em;
-      height: 2em;
-      margin: em(8);
-      border-radius: 50%;
-      background: $black;
-    }
+  width: em(32);
+  height: em(32);
+  margin: em(8);
+  border-radius: 50%;
+  background: $black;
+}
 
-    > .chat-group {
-      margin: em(8);
+.chat-group {
+  // margin: em(8);
+}
 
-      > .chat-text {
-        min-height: em(32);
-        padding: em(8 12);
-        border-radius: em(4 16 16 4);
-        background: $orange;
+.chat-bubble {
+  // min-height: em(32);
+  padding: em(8 12);
+  border-radius: em(4 16 16 4);
 
-        // > .chat-span {
-        //   font-size: em(14);
-        //   line-height: un(16, 14);
-        // }
+  color: $black;
+  background: rgb(191, 191, 191);
 
-        &:first-child { border-radius: em(16 16 16 4); }
-        &:last-child  { border-radius: em(4 16 16);    }
-        &:only-child  { border-radius: em(16);         }
+  &:first-child { border-radius: em(16 16 16 4); }
+  &:last-child  { border-radius: em(4 16 16);    }
+  &:only-child  { border-radius: em(16);         }
 
-        + .chat-text {
-          margin: em(4 0 0);
-        }
-      }
+  span {
+    font-size: em(14);
+    line-height: 1;
+  }
+
+  + .chat-bubble {
+    margin: em(4 0 0);
+  }
+}
+
+.chat-message {
+  display: flex;
+  // max-width: 62.5%;
+  padding: em(8);
+
+  &.-sent {
+    justify-content: flex-end;
+
+    .chat-bubble {
+      border-radius: em(16 4 4 16);
+      color: $white;
+      background: $orange;
+
+      &:first-child { border-radius: em(16 16 4 16); }
+      &:last-child  { border-radius: em(16 4 16 16); }
+      &:only-child  { border-radius: em(16);         }
     }
   }
 }

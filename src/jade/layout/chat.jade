@@ -1,0 +1,23 @@
+mixin chat-bubble
+  .chat-bubble
+    span
+      block
+
+.chat
+  .chat-message
+    //- .chat-avatar
+    .chat-group
+      +chat-bubble Hello World!
+      +chat-bubble Hello World!
+      +chat-bubble Hello World!
+
+  .chat-message.-sent
+    //- .chat-avatar
+    .chat-group
+      +chat-bubble Hello World!
+      +chat-bubble Hello World!
+      +chat-bubble Hello World!
+
+.message
+  textarea(placeholder='Type some words...')
+  input(type='submit')
