@@ -42,7 +42,6 @@
 
 .chat-message {
   display: flex;
-  // max-width: 62.5%;
   padding: em(8);
 
   &.-sent {
@@ -61,6 +60,16 @@
 }
 
 .message {
-  height: 6em;
+  display: flex;
   background: $color-message;
+
+  textarea {
+    flex: 1;
+    padding: em(16);
+  }
+
+  input[type=button] {
+    padding: em(16);
+    background: $orange;
+  }
 }
