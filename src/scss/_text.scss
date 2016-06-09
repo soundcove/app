@@ -1,5 +1,6 @@
 .text {
+  display: block;
   font-size: em(14);
-  letter-spacing: em(0.5);
-  line-height: un(24);
+  letter-spacing: em(0.25);
+  line-height: un(16, 14);
 }

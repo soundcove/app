@@ -1,24 +1,9 @@
-$green-dist: 32;
-$green-lite: rgb(0, 191 + $green-dist, 0);
-$green-dark: rgb(0, 191 - $green-dist, 0);
-$green: mix($green-lite, $green-dark);
-
-$blue-dist: 32;
-$blue-lite: rgb(0, 127 + $blue-dist, 255);
-$blue-dark: rgb(0, 127 - $blue-dist, 255);
-$blue: mix($blue-lite,   $blue-dark);
-
-$orange-dist: 32;
-$orange-lite: rgb(255, 127 + $orange-dist, 0);
-$orange-dark: rgb(255, 127 - $orange-dist, 0);
-$orange: mix($orange-lite,   $orange-dark);
-
-$red-dist: 32;
-$red-lite: rgb(191 + $red-dist, 0, 0);
-$red-dark: rgb(191 - $red-dist, 0, 0);
-$red: mix($red-lite, $red-dark);
-
-//
+$red:    rgb(255,  63,  63);
+$orange: rgb(255, 127,   0);
+$green:  rgb( 31, 191,  31);
+$blue:   rgb(  0, 127, 255);
+$purple: rgb(191,   0, 191);
+$gray:   rgb(127, 127, 127);
 
 $navy: mix($blue, $black);
 

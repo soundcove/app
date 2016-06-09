@@ -2,6 +2,11 @@ mixin use(href)
   svg(role='img' style='width: 16px; height: 16px;')
     use(xlink:href=href)
 
+mixin input-button
+  a.input-button&attributes(attributes)
+    span.text
+      block
+
 doctype
 html(lang='en-us')
   head
@@ -15,6 +20,20 @@ html(lang='en-us')
 
     //- +use('record_16')
     //- +use('sound_16')
+
+    //- .input-group
+      +input-button.-red Hello
+      +input-button.-orange Hello
+      +input-button.-green Hello
+      +input-button.-blue Hello
+      +input-button.-purple Hello
+
+    .input-group.-row
+      +input-button.-red Hello
+      +input-button.-orange Hello
+      +input-button.-green Hello
+      +input-button.-blue Hello
+      +input-button.-purple Hello
 
     include jade/layout.jade
 

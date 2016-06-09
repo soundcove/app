@@ -1,31 +1,31 @@
-$inset: inset em(1) em(1) 0 0 rgba($white, 0.25);
-$outset:      em(1) em(1) 0 0 rgba($white, 0.0625);
+.input-group {
+  display: flex;
 
-.button {
+  .input-button {
+    border-radius: em(2);
+
+    &:first-child { border-radius: em(8 2 2 8); }
+    &:last-child  { border-radius: em(2 8 8 2); }
+    &:only-child  { border-radius: em(8);        }
+
+    + .input-button {
+      margin: em(0 0 0 2);
+    }
+  }
+}
+
+.input-button {
   display: block;
-  width: em(96);
-  margin: em(4); // temp
   padding: em(8 16);
-  border: solid em(1) $black;
-  border-radius: em(3);
+  border-radius: em(8);
   color: $white;
   text-align: center;
-  box-shadow: $inset, $outset;
+  background: mix($navy, $black, 12.5%);
 
-  &.-okay   { background: linear-gradient($green-lite,  $green-dark);    }
-  &.-blue   { background: linear-gradient($blue-lite,   $blue-dark);   }
-  &.-orange { background: linear-gradient($orange-lite, $orange-dark); }
-  &.-error  { background: linear-gradient($red-lite,    $red-dark);    }
-
-  $dark: mix($navy, $black, 12.5%);
-
-  &.-dark {
-    $inset: inset em(1) em(1) 0 0 rgba($white, 0.0625);
-
-    background: linear-gradient(
-      mix($dark, $white, 75%),
-      mix($dark, $white, 87.5%)
-    );
-    box-shadow: $inset, $outset;
-  }
+  &.-red    { background: $red;    }
+  &.-orange { background: $orange; }
+  &.-green  { background: $green;  }
+  &.-blue   { background: $blue;   }
+  &.-purple { background: $purple; }
+  &.-gray   { background: $gray; }
 }
