@@ -1,11 +1,33 @@
+mixin head(arguments)
+  head&attributes(attributes)
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width' initial-scale='1')
+    meta(name='theme-color' content=arguments.theme)
+    meta(description=arguments.description)
+    block
+
++head({ theme: 'blue', description: 'whatever' })
+
+br
+br
+br
+
 mixin use(href)
   svg(role='img' style='width: 16px; height: 16px;')
     use(xlink:href=href)
 
-mixin input-button
-  a.input-button&attributes(attributes)
-    span.text
-      block
+mixin plump-button-icon
+  a.plump.-button&attributes(attributes)
+    .slot [ ]
+    .slot
+      span.text
+        block
+
+mixin plump-button
+  a.plump.-button&attributes(attributes)
+    .slot
+      span.text
+        block
 
 doctype
 html(lang='en-us')
@@ -21,19 +43,253 @@ html(lang='en-us')
     //- +use('record_16')
     //- +use('sound_16')
 
-    //- .input-group
-      +input-button.-red Hello
-      +input-button.-orange Hello
-      +input-button.-green Hello
-      +input-button.-blue Hello
-      +input-button.-purple Hello
 
-    .input-group.-row
-      +input-button.-red Hello
-      +input-button.-orange Hello
-      +input-button.-green Hello
-      +input-button.-blue Hello
-      +input-button.-purple Hello
+    .doc-group
+      .doc-top
+        p Plump nodes must have a slot.
+
+      .doc-left
+        .plump
+          .slot Plump
+
+      .doc-right
+        pre: code.
+          .plump
+            .slot Plump
+
+    br
+
+    .doc-group
+      .doc-top
+        p Plump nodes can have multiple slots.
+
+      .doc-left
+        .plump
+          .slot Plump
+          .slot Plump
+          .slot Plump
+
+      .doc-right
+        pre: code.
+          .plump
+            .slot Plump
+            .slot Plump
+            .slot Plump
+
+    br
+
+    .doc-group
+      .doc-top
+        p Plump nodes can be round.
+
+      .doc-left
+        .plump.-round
+          .slot Plump
+          .slot Plump
+          .slot Plump
+
+      .doc-right
+        pre: code.
+          .plump.-round
+            .slot Plump
+            .slot Plump
+            .slot Plump
+
+    br
+
+    .doc-group
+      .doc-top
+        p Plump nodes have a few built-in colors variants.
+
+      .doc-left
+        .plump.-round.-red
+          .slot Plump
+          .slot Plump
+          .slot Plump
+
+      .doc-right
+        pre: code.
+          .plump.-round.-red
+            .slot Plump
+            .slot Plump
+            .slot Plump
+
+    br
+
+    .doc-group
+      .doc-top
+        p Plump nodes can be grouped into rows.
+        p Note that the `.-round` variant was removed from all `.plump` nodes and added to the `.plump-group` node.
+
+      .doc-left
+        .plump-group.-round
+          .plump.-red
+            .slot Plump
+            .slot Plump
+            .slot Plump
+
+          .plump.-red
+            .slot Plump
+            .slot Plump
+            .slot Plump
+
+          .plump.-red
+            .slot Plump
+            .slot Plump
+            .slot Plump
+
+      .doc-right
+        pre: code.
+          .plump-group.-round
+            .plump.-red
+              .slot Plump
+              .slot Plump
+              .slot Plump
+
+            .plump.-red
+              .slot Plump
+              .slot Plump
+              .slot Plump
+
+            .plump.-red
+              .slot Plump
+              .slot Plump
+              .slot Plump
+
+    br
+
+    .doc-group
+      .doc-top
+        p Plump nodes can be grouped into columns.
+        p Note that the `.-round` variant was removed from all `.plump` nodes and added to the `.plump-group` node.
+
+      .doc-left
+        .plump-group.-column.-round
+          .plump.-red
+            .slot Plump
+            .slot Plump
+            .slot Plump
+
+          .plump.-red
+            .slot Plump
+            .slot Plump
+            .slot Plump
+
+          .plump.-red
+            .slot Plump
+            .slot Plump
+            .slot Plump
+
+      .doc-right
+        pre: code.
+          .plump-group.-column.-round
+            .plump.-red
+              .slot Plump
+              .slot Plump
+              .slot Plump
+
+            .plump.-red
+              .slot Plump
+              .slot Plump
+              .slot Plump
+
+            .plump.-red
+              .slot Plump
+              .slot Plump
+              .slot Plump
+
+
+
+
+
+
+    br
+
+    .plump
+      .slot []
+      .slot Plump
+
+    br
+
+
+
+
+
+    br
+
+    .plump.-round: .slot Plump
+
+    br
+
+    .plump.-round.-red: .slot Plump
+
+    br
+
+    .plump.-round.-red: .slot Plump
+    .plump.-round.-red: .slot Plump
+    .plump.-round.-red: .slot Plump
+
+    br
+
+    .plump-group
+      .plump.-round.-red: .slot Plump
+      .plump.-round.-red: .slot Plump
+      .plump.-round.-red: .slot Plump
+
+    br
+
+    .plump-group.-row
+      .plump.-round.-red: .slot Plump
+      .plump.-round.-red: .slot Plump
+      .plump.-round.-red: .slot Plump
+
+    br
+
+    .plump-group.-column
+      .plump.-round.-red: .slot Plump
+      .plump.-round.-red: .slot Plump
+      .plump.-round.-red: .slot Plump
+
+    //- .plump-group.-row.-round
+    //-   .plump.-white
+    //-     input.slot(type='text')
+    //-     input.slot(type='text')
+    //-
+    //-   .plump.-white
+    //-     input.slot(type='text')
+    //-     input.slot(type='text')
+    //-
+    //- +plump-button.-red Hello
+    //- +plump-button.-orange Hello
+    //- +plump-button.-green Hello
+    //- +plump-button.-blue Hello
+    //- +plump-button.-purple Hello
+    //-
+    //- +plump-button-icon.-red Hello
+    //- +plump-button-icon.-orange Hello
+    //- +plump-button-icon.-green Hello
+    //- +plump-button-icon.-blue Hello
+    //- +plump-button-icon.-purple Hello
+    //-
+    //- .plump-group
+    //-   +plump-button.-red Hello
+    //-   +plump-button.-orange Hello
+    //-   +plump-button.-green Hello
+    //-   +plump-button.-blue Hello
+    //-   +plump-button.-purple Hello
+    //-
+    //- .plump-group.-row.-round
+    //-   +plump-button-icon.-red Hello
+    //-   +plump-button-icon.-orange Hello
+    //-   +plump-button-icon.-green Hello
+    //-   +plump-button-icon.-blue Hello
+    //-   +plump-button-icon.-purple Hello
+    //-
+    //- .plump-group
+    //-   +plump-button.-purple Hello
+    //-
+    //- .plump-group
+    //-   +plump-button-icon.-purple Hello
 
     include jade/layout.jade
 

@@ -1,0 +1,47 @@
+.plump {
+           > .slot { background: $gray; }
+  &:hover  > .slot { background: $gray; }
+  &:active > .slot { background: $gray; }
+
+  &.-black {
+             > .slot { background: $black; }
+    &:hover  > .slot { background: $black; }
+    &:active > .slot { background: $black; }
+  }
+
+  &.-white {
+             > .slot { background: $white; }
+    &:hover  > .slot { background: $white; }
+    &:active > .slot { background: $white; }
+  }
+
+  &.-red {
+             > .slot { background: $red; }
+    &:hover  > .slot { background: $red; }
+    &:active > .slot { background: $red; }
+  }
+
+  &.-orange {
+             > .slot { background: $orange; }
+    &:hover  > .slot { background: $orange; }
+    &:active > .slot { background: $orange; }
+  }
+
+  &.-green {
+             > .slot { background: $green; }
+    &:hover  > .slot { background: $green; }
+    &:active > .slot { background: $green; }
+  }
+
+  &.-blue {
+             > .slot { background: $blue; }
+    &:hover  > .slot { background: $blue; }
+    &:active > .slot { background: $blue; }
+  }
+
+  &.-purple {
+             > .slot { background: $purple; }
+    &:hover  > .slot { background: $purple; }
+    &:active > .slot { background: $purple; }
+  }
+}

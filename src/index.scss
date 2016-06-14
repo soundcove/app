@@ -1,6 +1,7 @@
 @import 'bower_components/color-sass/scss/main';
 @import 'bower_components/pilot-reset/scss/main';
-@import 'bower_components/mint-sass/scss/main';
+// @import 'bower_components/mint-sass/scss/main';
+@import '../../../_sass/mint-sass/scss/main';
 
 @import 'scss/variables';
 @import 'scss/colors';
@@ -14,6 +15,12 @@ body {
   color: $white;
   font-family: 'Open Sans', sans-serif;
 }
+
+@import 'scss/plump/input';
+@import 'scss/plump/color';
+@import 'scss/plump/group';
+@import 'scss/plump/round';
+
 
 // Micro Components
 @import 'scss/text';
@@ -30,8 +37,27 @@ body {
 @import 'scss/button';
 @import 'scss/chat';
 
+
+.doc-group {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.doc-top {
+  width: 100%;
+}
+
+.doc-left,
+.doc-right {
+  flex: 1;
+}
+
+
+
+
+
+
 body {
-  font-weight: 300;
   background: $color-body;
 }
 

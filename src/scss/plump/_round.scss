@@ -1,0 +1,59 @@
+.plump.-round > .slot {
+  border-radius: 0;
+
+  &:first-child { border-radius: em(8 0 0 8); }
+  &:last-child  { border-radius: em(0 8 8 0); }
+  &:only-child  { border-radius: em(8); }
+}
+
+.plump-group.-round .plump {
+  > .slot {
+    &:first-child { border-radius: em(2 0 0 2); }
+    &:last-child  { border-radius: em(0 2 2 0); }
+    &:only-child  { border-radius: em(2); }
+  }
+
+  &:first-child > .slot {
+    &:first-child { border-radius: em(8 0 0 8); }
+    &:last-child  { border-radius: em(0 2 2 0); }
+    &:only-child  { border-radius: em(8 2 2 8); }
+  }
+
+  &:last-child > .slot {
+    &:first-child { border-radius: em(2 0 0 2); }
+    &:last-child  { border-radius: em(0 8 8 0); }
+    &:only-child  { border-radius: em(2 8 8 2); }
+  }
+
+  &:only-child > .slot {
+    &:first-child { border-radius: em(8 0 0 8); }
+    &:last-child  { border-radius: em(0 8 8 0); }
+    &:only-child  { border-radius: em(8); }
+  }
+}
+
+.plump-group.-column.-round .plump {
+  // > .slot {
+  //   &:first-child { border-radius: em(2 0 0 2); }
+  //   &:last-child  { border-radius: em(0 2 2 0); }
+  //   &:only-child  { border-radius: em(2); }
+  // }
+
+  &:first-child > .slot {
+    &:first-child { border-radius: em(8 0 0 2); }
+    &:last-child  { border-radius: em(0 8 2 0); }
+    // &:only-child  { border-radius: em(8 2 2 8); }
+  }
+
+  &:last-child > .slot {
+    &:first-child { border-radius: em(2 0 0 8); }
+    &:last-child  { border-radius: em(0 2 8 0); }
+    // &:only-child  { border-radius: em(2 8 8 2); }
+  }
+
+  // &:only-child > .slot {
+  //   &:first-child { border-radius: em(8 0 0 8); }
+  //   &:last-child  { border-radius: em(0 8 8 0); }
+  //   &:only-child  { border-radius: em(8); }
+  // }
+}
